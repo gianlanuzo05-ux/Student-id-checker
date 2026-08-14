@@ -1,0 +1,88 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main () {
+	string name, program, subject;
+	string StudentID;
+	double balance = 5000;
+	float grade;
+	int age, choice;
+	
+	vector<string> validIDs = {
+		"2611556",
+		"2611644",
+		"2611557"
+	};
+	
+	cout << "Enter your name: ";
+	getline(cin, name);
+	
+	cout << "Enter your Student ID: ";
+	getline(cin, StudentID);
+	
+	cout << "Enter your age: ";
+	cin >> age;
+	cin.ignore();
+	
+	cout << "Enter your program: ";
+	getline(cin, program);
+	
+	
+	bool isValid = find(validIDs.begin(), validIDs.end(), StudentID) != validIDs.end();
+		if(isValid) {
+			cout << "\nCorrect ID. Proceed to portal\n";
+		
+		do { 
+		
+		cout << "Choose a service:\n";
+		cout << "1. Check your grade\n";
+		cout << "2. Check your balance\n";
+		cout << "3. Check your schedule subjects\n";
+		cout << "4. Exit\n";
+		cout << "Enter your choice: ";
+		cin >> choice;
+		
+		switch(choice) {
+			case 1:
+				cout << "Enter your grade: ";
+				cin >> grade;
+				
+				if(grade <= 3.0) {
+					cout << "Passed!";
+				} else {
+					cout << "Failed!";
+				}
+				break;
+				
+				case 2:
+					cout << "The balance is " << balance << "\n";
+					break;
+					
+					case 3:
+						cout << "Computer Programming 1\n Monday(4pm-6pm), Tuesday(7am-10am)\n" << "\n";						
+						cout << "Networking 1\n Monday(1pm-3pm), Wednesday(10am-1pm)\n" << "\n";						
+						cout << "Intro to computing\n Monday(8am-10am), Wednesday(4pm-7pm)\n" << "\n";						
+						cout << "Multimedia System\n Tuesday(OC), Saturday(8am-11am)\n" << "\n";					
+						cout << "PATHFIT\n Wednesday(8am-10am)\n" << "\n";						
+						cout << "Purposive communication\n Tuesday(ONLINE)\n" << "\n";						
+						cout << "Understanding the self\n Saturday(ONLINE)\n" << "\n";					
+						cout << "Ethics\n Thursday(ONLINE)\n" << "\n";
+						break;
+						case 4:
+							cout << "Thank you for using Student Checker!";
+							break;
+							
+							default:
+								cout << "Invalid Choice!";
+			}
+			
+		} while(choice != 4);
+		
+	} else {
+		cout << "Invalid Student ID!";
+	}
+	return 0;
+}
