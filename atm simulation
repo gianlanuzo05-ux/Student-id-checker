@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int pin, choice;
+    double balance = 50000;
+    double amount;
+
+    cout << "Enter your PIN: ";
+    cin >> pin;
+
+    if (pin == 55555) {
+        do {
+            cout << "\n========ATM SIMULATION==========\n";
+            cout << "1. Check Balance\n";
+            cout << "2. Withdraw\n";
+            cout << "3. Deposit\n";
+            cout << "4. Exit\n";
+            cout << "Enter your choice: ";
+            cin >> choice;
+
+            switch (choice) {
+                case 1:
+                    cout << "My balance is: " << balance << endl;
+                    break;
+
+                    case 2:
+                    cout << "Put amount  to withdraw your balance: ";
+                    cin >> amount;
+
+                    if (amount <= balance) {
+                         balance -= amount;
+                        cout << "Successfully withdraw\n";
+                        cout << "The remaining balance is " << balance << "\n" << endl;
+                    } else {
+                        cout << "Insufficient balance";
+                    }
+                    break;
+
+                    case 3:
+                    cout << "Put amount you want to deposit: ";
+                    cin >> amount;
+
+                    if (amount > 0) {
+                        balance += amount;
+                        cout << "Successfully deposited\n";
+                        cout << "The remaining balance is " << balance << "\n" << endl;
+                    } else {
+                        cout << "Invalid amount!";
+                    }
+                    break;
+
+                    case 4:
+                    cout << "Thank you for using our ATM SIMULATION!";
+                    break;
+
+                    default:
+                    cout << "Invalid choice";
+            }
+        } while (choice != 4);
+    } else {
+        cout << "Invalid PIN";
+    }
+    return 0;
+}
