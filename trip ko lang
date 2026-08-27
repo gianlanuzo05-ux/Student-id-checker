@@ -1,0 +1,166 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main () {
+	string name, program, address;
+	string StudentID;
+	int age, pin, choice;
+	double grade;
+	double balance = 50000;
+	
+	vector<string> validIDs = {
+		"",
+		"",
+		""
+	};
+	
+	cout << "Enter your Student ID: ";
+	cin >> StudentID;
+	
+	bool isValid = find(validIDs.begin(), validIDs.end(), StudentID ) != validIDs.end();
+	if(isValid) {
+		cout << "\nCorrect Student ID!. Procceed to choices.";
+		
+		do {
+			cout << "\nChoice services!\n";
+			cout << "1. Personal Information\n";
+			cout << "2. List of your Grades\n";
+			cout << "3. Check your Balance\n";
+			cout << "4. Schedule of your Subject\n";
+			cout << "5. Exit\n";
+			cout << "Enter your choice: ";
+			cin >> choice;
+			
+			switch(choice) {
+				case 1:
+					cin.ignore();
+					
+					cout << "Enter your Name: ";
+					getline(cin, name);
+					
+					cout << "Enter your Age: ";
+					cin >> age;
+					cin.ignore();
+					
+					cout << "Enter your Address: ";
+					getline(cin, address);
+					
+					cout << "Enter your Program: ";
+					getline(cin, program);
+					
+					cout << "\n=======================\n";
+					cout << "Name    : " << name << "\n";
+					cout << "Age     :  " << age << "\n";
+					cout << "Address : " << address << "\n";
+					cout << "Program : " << program << "\n";
+					
+					break;
+					
+					case 2:
+						cout << "Enter your Grade in ITC: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\n";
+						} else {
+							cout << "Failed!\n";
+						}
+						
+						cout << "Enter your Grade in Networking: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\n";
+						} else {
+							cout << "Failed!\n";
+						}
+						
+						cout << "Enter your Grade in ComProg: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\n";
+						} else {
+							cout << "Failed!\n";
+						}
+						
+						cout << "Enter your Grade in MultiMedia: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\n";
+						} else {
+							cout << "Failed!\n";
+						}
+						
+						cout << "Enter your Grade in PATHFIT: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\m";
+						} else {
+							cout << "Failed!\n";
+						}
+						
+						cout << "Enter your Grade in Ethics: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\n";
+						} else {
+							cout << "Failed!\n";
+						}
+						
+						cout << "Enter your Grade in UTS: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\n";
+						} else {
+							cout << "Failed!\n";
+						}
+						
+						cout << "Enter your Grade in PurposiveComm: ";
+						cin >> grade;
+						
+						if(grade <= 3.0) {
+							cout << "Passed!\n";
+						} else {
+							cout << "Failed!\n";
+						}
+						break;
+						
+						case 3:
+							cout << "The balance is: " << balance;
+							break;
+							
+							case 4:
+						cout << "Computer Programming 1\n Monday(4pm-6pm), Tuesday(7am-10am)\n" << "\n";						
+						cout << "Networking 1\n Monday(1pm-3pm), Wednesday(10am-1pm)\n" << "\n";						
+						cout << "Intro to computing\n Monday(8am-10am), Wednesday(4pm-7pm)\n" << "\n";						
+						cout << "Multimedia System\n Tuesday(OC), Saturday(8am-11am)\n" << "\n";					
+						cout << "PATHFIT\n Wednesday(8am-10am)\n" << "\n";						
+						cout << "Purposive communication\n Tuesday(ONLINE)\n" << "\n";						
+						cout << "Understanding the self\n Saturday(ONLINE)\n" << "\n";					
+						cout << "Ethics\n Thursday(ONLINE)\n" << "\n";
+						
+						break;
+						
+						case 5:
+							cout << "Thank your for Trying! Come Again!";
+							break;
+							
+							default:
+								cout << "Invalid Choice!";
+			}
+		} while(choice != 5);
+	} else {
+		cout << "Invalid Student ID!";
+	}
+	return 0;
+	
+	
+}
