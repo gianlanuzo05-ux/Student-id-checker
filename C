@@ -1,0 +1,291 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void Home(),clear();
+void History(),h_con();
+void Personal_info(),p_con();
+void quiz(),q_con();
+
+int main() {
+
+    Home();
+
+    return 0;
+}
+
+void Home() {
+    int choice;
+
+    /* Personal Information variables */
+    char fname[50], lname[50];
+    char city[50];
+    char program[50];
+    char p_section[30];
+    int day, month, year;
+    int contact;
+
+    /* Quiz variables */
+    char name[50];
+    char q_section[30];
+    char answer1, answer2, answer3, answer4, answer5;
+    int score;
+    int item = 5;
+    int average;
+
+    do {
+        printf("\nMy Compilation\n");
+        printf("1 to printf = History of C language\n");
+        printf("2 to printf = Personal Information\n");
+        printf("3 to Conditional Statements Quiz\n");
+        printf("0 to Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &choice);
+
+        switch (choice) {
+            case 1:
+            printf("Ang C language ay isang programming language na"
+                       "binuo ni Dennis Ritchie sa Bell Labs noong"
+                       "unang bahagi ng 1970s, partikular noong 1972."
+                       "Nagmula ito sa mga naunang programming language"
+                       "tulad ng BCPL at B. Ginawa ang C upang maging"
+                       "mas mahusay at flexible sa pag-develop ng Unix"
+                       "operating system. Noong 1978, inilathala nina"
+                       "Dennis Ritchie at Brian Kernighan ang aklat na"
+                       "The C Programming Language, na naging mahalagang"
+                       "reference para sa mga programmer. Kalaunan,"
+                       "naging standardized ang C sa pamamagitan ng"
+                       "ANSI C (C89) at ISO C (C90), at nagkaroon ng"
+                       "mga bagong bersyon tulad ng C99, C11, C17, at C23."
+                       "Hanggang ngayon, mahalaga pa rin ang C dahil sa"
+                       "bilis, efficiency, at kakayahan nitong magbigay"
+                       "ng mababang-level control sa computer hardware"
+                       "at memory.\n");
+
+                       break;
+
+                       case 2:
+                       printf("\n============ PERSONAL INFORMATION ============\n");
+
+                printf("Enter First name: ");
+                scanf("%49s", fname);
+
+                printf("Enter Last name: ");
+                scanf("%49s", lname);
+
+                printf("Enter City address: ");
+                scanf(" %[^\n]", city);
+
+                printf("Enter Birthdate (DD MM YYYY): ");
+                scanf("%d %d %d", &day, &month, &year);
+
+                printf("Enter Contact Number: ");
+                scanf("%d", &contact);
+
+                printf("Enter Program: ");
+                scanf("%49s", program);
+
+                printf("Enter Section: ");
+                scanf("%29s", p_section);
+
+                printf("\n-------- PERSONAL INFORMATION --------\n");
+
+                printf("Fullname       : %s %s\n", fname, lname);
+                printf("City Address   : %s\n", city);
+                printf("Birthday       : %02d/%02d/%04d\n",
+                       day, month, year);
+
+                printf("Age            : %d\n", 2026 - year);
+
+                printf("Contact Number : %d\n", contact);
+
+                printf("Program/Section: %s %s\n",
+                       program, p_section);
+
+                break;
+
+                case 3:
+                score = 0;
+
+                printf("\n===== FINAL ACTIVITY - QUIZ =====\n\n");
+
+                printf("Enter Name: ");
+                scanf(" %[^\n]", name);
+
+                printf("Enter Section: ");
+                scanf(" %[^\n]", q_section);
+
+                printf("\n================================\n");
+                printf("Name: %s\n", name);
+                printf("Section: %s\n", q_section);
+                printf("================================\n\n");
+
+                printf("Instruction: Answer the following questions.\n");
+                printf("Enter A, B, or C only.\n\n");
+
+
+                
+                printf("===== COMPUTER PROGRAMMING =====\n");
+
+                printf("1. Which header file is commonly used for printf() and scanf()?\n");
+                printf("A) stdio.h\n");
+                printf("B) math.h\n");
+                printf("C) string.h\n");
+
+                printf("Enter your answer: ");
+                scanf(" %c", &answer1);
+
+                if (answer1 == 'A' || answer1 == 'a')
+                {
+                    printf("Correct!\n\n");
+                    score++;
+                }
+                else
+                {
+                    printf("Wrong! The correct answer is A) stdio.h\n\n");
+                }
+
+
+                
+                printf("===== UNDERSTANDING THE SELF =====\n");
+
+                printf("2. Who said \"Know Thyself\"?\n");
+                printf("A) Socrates\n");
+                printf("B) Aristotle\n");
+                printf("C) Plato\n");
+
+                printf("Enter your answer: ");
+                scanf(" %c", &answer2);
+
+                if (answer2 == 'A' || answer2 == 'a')
+                {
+                    printf("Correct!\n\n");
+                    score++;
+                }
+                else
+                {
+                    printf("Wrong! The correct answer is A) Socrates\n\n");
+                }
+
+
+               
+                printf("===== READING IN PHILIPPINE HISTORY =====\n");
+
+                printf("3. What is a primary source in history?\n");
+                printf("A) A history textbook\n");
+                printf("B) A diary written during historical events\n");
+                printf("C) A history movie\n");
+
+                printf("Enter your answer: ");
+                scanf(" %c", &answer3);
+
+                if (answer3 == 'B' || answer3 == 'b')
+                {
+                    printf("Correct!\n\n");
+                    score++;
+                }
+                else
+                {
+                    printf("Wrong! The correct answer is B\n\n");
+                }
+
+
+                
+                printf("===== INTRODUCTION TO COMPUTING =====\n");
+
+                printf("4. What does CPU stand for?\n");
+                printf("A) Central Program Unit\n");
+                printf("B) Computer Processing Unit\n");
+                printf("C) Central Processing Unit\n");
+
+                printf("Enter your answer: ");
+                scanf(" %c", &answer4);
+
+                if (answer4 == 'C' || answer4 == 'c')
+                {
+                    printf("Correct!\n\n");
+                    score++;
+                }
+                else
+                {
+                    printf("Wrong! The correct answer is C\n\n");
+                }
+
+
+                
+                printf("===== NSTP =====\n");
+
+                printf("5. What does NSTP stand for?\n");
+                printf("A) National Student Training Program\n");
+                printf("B) National Service Training Program\n");
+                printf("C) National Safety Training Program\n");
+
+                printf("Enter your answer: ");
+                scanf(" %c", &answer5);
+
+                if (answer5 == 'B' || answer5 == 'b')
+                {
+                    printf("Correct!\n\n");
+                    score++;
+                }
+                else
+                {
+                    printf("Wrong! The correct answer is B\n\n");
+                }
+
+
+                
+                printf("================================\n");
+                printf("          QUIZ FINISHED\n");
+                printf("================================\n");
+
+                printf("Name: %s\n", name);
+                printf("Section: %s\n", q_section);
+                printf("Score: %d/%d\n", score, item);
+
+                average = (score * 100) / item;
+
+                printf("Average: %d%%\n", average);
+
+
+                if (average >= 81)
+                {
+                    printf("Remark: Outstanding Performance!\n");
+                }
+                else if (average >= 61)
+                {
+                    printf("Remark: Excellent! You have a strong understanding.\n");
+                }
+                else if (average >= 41)
+                {
+                    printf("Remark: Good Job! Keep reviewing to improve even more.\n");
+                }
+                else if (average >= 21)
+                {
+                    printf("Remark: Keep Going! Review the lesson and try again.\n");
+                }
+                else
+                {
+                    printf("Remark: Don't give up! Every quiz is a chance to learn.\n");
+                }
+
+
+                if (score == item)
+                {
+                    printf("Congratulations! You got a perfect score!\n");
+                }
+
+                break;
+
+
+                case 0:
+                printf("Thank you!");
+                break;
+
+                default:
+                printf("Invalid choice. Please try again.\n");
+
+        }
+
+    } while (choice != 0);
+
+}
